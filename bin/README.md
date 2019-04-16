@@ -13,6 +13,8 @@ Les condensats MD5 des PDF sont :
 - pcg\_janvier 2017.pdf : c3a8af79f120a991c4342b65f6e59159
 - PCG_2019.pdf : 94159234e1516a261424719406234e6e
 - Reg\_9901\_consolide.pdf : cb1d9c0876296afca4e151cb548aaff8
+- Reglt_2018-06_Association.pdf : 2bb81e5902fae88f86ceccaaa8027f8c
+- Reglt_2018_06_Association_commentaires.pdf : 46636b244f4c974528b50c8c1938a131
 
 PCG 2014-03
 -----------
@@ -24,6 +26,18 @@ php extraction_PCG_2014-03_v2019-01-01.php PCG_2019.pdf
 ```
 
 Noter que le niveau de détails 'étendu' n’est pas obtenu pour v2016-01-01, v2017-01-01 et v2019-01-01 car l’extraction du PDF avec `pdftohtml` ne rend pas l’italique (probablement une différence dans le formatage interne du PDF), ce niveau de détails a donc été entré à la main après obtention du CSV (il faut ensuite exécuter `export_gnucash.php` sur le fichier CSV pour obtenir les fichiers GNUCash correspondants au CSV).
+
+PCA 2018-06
+---------
+
+Pour le PCA du règlement 2018-06 lancer au préalable l’extraction du PCG sur lequel se base le PCA, puis lancer `extraction_PCA_2018-06_associations.php` avec pour seul argument l’emplacement du CSV du PCG. Par exemple :
+
+```sh
+php extraction_PCA_2018-06_associations.php PCG_2014-03_v2019-01-01.csv
+```
+
+Noter que, contrairement au PCG, le règlement 2018-06 du PCA ne mentionne pas de niveau de détail (abrégé, base, étendu). Les comptes créés le sont ici avec le niveau de détail 'base' et les comptes remplacés conservent leur niveau de détail du PCG.
+
 
 PCA 99-01
 ---------
