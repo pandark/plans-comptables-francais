@@ -9,7 +9,7 @@ $nomFichierCSV = $argv[1];
 function GnuCash_get_guid() {
 	
 	$guid = '';
-	for( $i=0; $i<40; $i++ ) {
+	for( $i=0; $i<32; $i++ ) {
 		$guid .= dechex( rand( 0, 15 ) );
 	}
 	return $guid;

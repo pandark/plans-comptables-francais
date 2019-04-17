@@ -50,7 +50,7 @@ file_put_contents( 'PCA_2004-12_v2017-01-01.csv', $text . "\n" );
 function GnuCash_get_guid() {
 	
 	$guid = '';
-	for( $i=0; $i<40; $i++ ) {
+	for( $i=0; $i<32; $i++ ) {
 		$guid .= dechex( rand( 0, 15 ) );
 	}
 	return $guid;
